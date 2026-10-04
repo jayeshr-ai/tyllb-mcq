@@ -137,7 +137,7 @@ const SUBJ = Object.fromEntries(SUBJECTS.map(s => [s.key, s]));
 const COLOR = { cpc: 'var(--c-cpc)', bnss: 'var(--c-bnss)', labour: 'var(--c-labour)', pil: 'var(--c-pil)', all: 'var(--c-all)' };
 const KEY = 'tyllb-mcq-v1';
 
-let store = { stats: {}, flags: {}, settings: { subject: 'all', mode: 'practice', count: 20, topic: 'all', wrongOnly: false } };
+let store = { stats: {}, flags: {}, settings: { subject: 'all', mode: 'practice', count: 'all', topic: 'all', wrongOnly: false } };
 try { const raw = localStorage.getItem(KEY); if (raw) { const s = JSON.parse(raw); store = { ...store, ...s, settings: { ...store.settings, ...(s.settings || {}) } }; } } catch (e) {}
 function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
 
